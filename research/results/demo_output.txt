@@ -1,0 +1,76 @@
+# bin/riskd run -replay testdata/deribit-btc-sample.jsonl.gz -speed 10 -addr 127.0.0.1:18090 -dur 25s   (output truncated to 260 columns)
+$ curl -sN 127.0.0.1:18090/api/stream | head -6
+event: risk
+data: {"seq":59,"ts":1793610162827,"index":78189.72,"totals":{"value_usd":-234856.91486856795,"delta_btc":-0.6555842744226736,"gamma_1pct_btc":1.0196496090253822,"vega_usd_per_volpt":-1583.620500625999,"theta_usd_per_day":-1937.9874540194207,"vanna_per_volpt":
+
+event: risk
+data: {"seq":60,"ts":1793610163200,"index":78189.72,"totals":{"value_usd":-234813.88616615615,"delta_btc":-0.643341179897623,"gamma_1pct_btc":1.0241812519718552,"vega_usd_per_volpt":-1580.8043860880389,"theta_usd_per_day":-1960.2208611484964,"vanna_per_volpt":
+
+
+$ curl -s 127.0.0.1:18090/api/snapshot | jq "{index, totals, pnl, limits: [.limits[] | {name, utilisation, breached}], worst: .scenarios.worst_usd, latency}"
+{
+  "index": 78197.51,
+  "totals": {
+    "value_usd": -130750.02275507398,
+    "delta_btc": 1.7724912656782654,
+    "gamma_1pct_btc": 1.0813138658567774,
+    "vega_usd_per_volpt": -1040.308964300704,
+    "theta_usd_per_day": -1987.8779430286163,
+    "vanna_per_volpt": 0.14357676324680338,
+    "volga_usd_per_volpt2": 51.01325692791127
+  },
+  "pnl": {
+    "total_usd": -34333.980156439706,
+    "realised_usd": -31.998644234213454,
+    "unrealised_usd": -34301.98151220549,
+    "explain": {
+      "Delta": -21.509862236198558,
+      "Gamma": 0.8369386969593624,
+      "Vega": 237.6748573329288,
+      "Theta": -3.243213816380907,
+      "Vanna": 0.6392207758771484,
+      "Volga": -109.37679967422493,
+      "Unexplained": -3.918351431360544,
+      "NewTrade": -34435.082946087314
+    }
+  },
+  "limits": [
+    {
+      "name": "delta_btc",
+      "utilisation": 0.44312281641956636,
+      "breached": false
+    },
+    {
+      "name": "gamma_1pct_btc",
+      "utilisation": 0.0720875910571185,
+      "breached": false
+    },
+    {
+      "name": "vega_bucket_usd",
+      "utilisation": 0.1307857594303975,
+      "breached": false
+    },
+    {
+      "name": "scenario_loss_usd",
+      "utilisation": 0.004410568806310284,
+      "breached": false
+    }
+  ],
+  "worst": -11026.42201577571,
+  "latency": {
+    "count": 292,
+    "p50_us": 181.503,
+    "p99_us": 653.823,
+    "p999_us": 689.151,
+    "max_us": 689.151
+  }
+}
+$ curl -s 127.0.0.1:18090/metrics | grep -E "^riskd_(delta|vega|pnl|limit)"
+riskd_delta_btc 1.7493962786505972
+riskd_vega_usd -1055.1236004357604
+riskd_pnl_usd -34460.30913753032
+riskd_pnl_unexplained_usd -4.02814145014068
+riskd_limit_utilisation{limit="delta_btc"} 0.4373490696626493
+riskd_limit_utilisation{limit="gamma_1pct_btc"} 0.07207418023576753
+riskd_limit_utilisation{limit="vega_bucket_usd"} 0.1307857594303975
+riskd_limit_utilisation{limit="scenario_loss_usd"} 0.004453016779301063

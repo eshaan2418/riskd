@@ -1,0 +1,201 @@
+{
+  "implied_vol_vs_deribit_mark_iv": [
+    {
+      "pricer": "go",
+      "solved": 895,
+      "failed": 1,
+      "failed_otm_t_ge_1d": 0,
+      "abs_diff_vs_mark_iv_volpts_otm_t_ge_1d": {
+        "n": 421,
+        "median": 0.0027883501410308487,
+        "p90": 0.007768855693812693,
+        "p99": 0.017471036014893304,
+        "max": 0.020900125744671705
+      },
+      "abs_diff_vs_mark_iv_volpts_all": {
+        "n": 895,
+        "median": 0.004488773635380472,
+        "p90": 0.06872362864651649,
+        "p99": 2.0451649955064655,
+        "max": 11.661644364037782
+      },
+      "ns_per_solve": 470.0502232142857
+    },
+    {
+      "pricer": "volsurf",
+      "solved": 895,
+      "failed": 1,
+      "failed_otm_t_ge_1d": 0,
+      "abs_diff_vs_mark_iv_volpts_otm_t_ge_1d": {
+        "n": 421,
+        "median": 0.0027883501410141953,
+        "p90": 0.007768855693784937,
+        "p99": 0.017471036014932162,
+        "max": 0.020900125744632847
+      },
+      "abs_diff_vs_mark_iv_volpts_all": {
+        "n": 895,
+        "median": 0.004488773635513699,
+        "p90": 0.06872362865079085,
+        "p99": 2.0451649955013362,
+        "max": 11.661644363868174
+      },
+      "ns_per_solve": 381.02120535714283
+    }
+  ],
+  "iv_from_tick_rounded_marks_vs_deribit_iv": {
+    "1-9 ticks": {
+      "n": 293,
+      "median": 0.6091289362872621,
+      "p90": 1.2466893127915046,
+      "p99": 4.128069680198754,
+      "max": 5.662005844872536
+    },
+    "10-99 ticks": {
+      "n": 3420,
+      "median": 0.1509242644269937,
+      "p90": 0.29424625848678,
+      "p99": 0.4574512364434624,
+      "max": 0.5875372248556721
+    },
+    "100-999 ticks": {
+      "n": 11679,
+      "median": 0.022708309679897454,
+      "p90": 0.0744750778462866,
+      "p99": 0.21581545827977777,
+      "max": 0.4078467633800653
+    },
+    "\u003e=1000 ticks": {
+      "n": 1772,
+      "median": 0.012892378094958579,
+      "p90": 0.023637730714437533,
+      "p99": 0.03684766731884559,
+      "max": 0.04069368680703622
+    },
+    "note": "OTM options, T \u003e= 1 day; forward = parity forward; abs diff in vol points",
+    "pricer": "volsurf"
+  },
+  "journal": {
+    "duration_s": 2700.896,
+    "frames": 5114,
+    "index_ticks": 2367,
+    "mark_message_interval_ms": {
+      "n": 2567,
+      "median": 1007,
+      "p90": 1244,
+      "p99": 2267,
+      "max": 5032
+    },
+    "mark_messages": 2568,
+    "mark_rows": 100133,
+    "options_in_summary": 896,
+    "rows_per_mark_message": 38.99260124610592
+  },
+  "parity_forward_vs_deribit": {
+    "abs_diff_bps": {
+      "n": 12,
+      "median": 0.12912378301699334,
+      "p90": 0.1399966799464636,
+      "p99": 0.1477056650966979,
+      "max": 0.1477056650966979
+    },
+    "expiries": [
+      {
+        "expiry": "3NOV26",
+        "t_years": 0.002709435946220193,
+        "parity_forward": 78047.89565212485,
+        "deribit_underlying": 78048.93,
+        "diff_bps": -0.13252556763321266,
+        "parity_strikes": 5
+      },
+      {
+        "expiry": "4NOV26",
+        "t_years": 0.005449161973617453,
+        "parity_forward": 78059.73989954252,
+        "deribit_underlying": 78059.64,
+        "diff_bps": 0.012797848225609698,
+        "parity_strikes": 5
+      },
+      {
+        "expiry": "5NOV26",
+        "t_years": 0.008188888001014713,
+        "parity_forward": 78073.23995939596,
+        "deribit_underlying": 78074.04,
+        "diff_bps": -0.10247203859781173,
+        "parity_strikes": 5
+      },
+      {
+        "expiry": "6NOV26",
+        "t_years": 0.010928614028411974,
+        "parity_forward": 78085.82012489016,
+        "deribit_underlying": 78086.01,
+        "diff_bps": -0.024316149568326395,
+        "parity_strikes": 5
+      },
+      {
+        "expiry": "13NOV26",
+        "t_years": 0.030106696220192797,
+        "parity_forward": 78170.70956101279,
+        "deribit_underlying": 78171.76,
+        "diff_bps": -0.13437576270591833,
+        "parity_strikes": 5
+      },
+      {
+        "expiry": "20NOV26",
+        "t_years": 0.049284778411973616,
+        "parity_forward": 78256.2595125249,
+        "deribit_underlying": 78257.27,
+        "diff_bps": -0.12912378301699334,
+        "parity_strikes": 5
+      },
+      {
+        "expiry": "27NOV26",
+        "t_years": 0.06846286060375444,
+        "parity_forward": 78338.87007345688,
+        "deribit_underlying": 78338.98,
+        "diff_bps": -0.014032164206145836,
+        "parity_strikes": 5
+      },
+      {
+        "expiry": "25DEC26",
+        "t_years": 0.14517518937087773,
+        "parity_forward": 78698.24756513032,
+        "deribit_underlying": 78699.41,
+        "diff_bps": -0.1477056650966979,
+        "parity_strikes": 5
+      },
+      {
+        "expiry": "29JAN27",
+        "t_years": 0.24106560032978183,
+        "parity_forward": 79088.67976395893,
+        "deribit_underlying": 79089.47,
+        "diff_bps": -0.09991671976905536,
+        "parity_strikes": 5
+      },
+      {
+        "expiry": "26MAR27",
+        "t_years": 0.3944902578640284,
+        "parity_forward": 79754.94344163944,
+        "deribit_underlying": 79756.06,
+        "diff_bps": -0.1399966799464636,
+        "parity_strikes": 5
+      },
+      {
+        "expiry": "25JUN27",
+        "t_years": 0.6438053263571791,
+        "parity_forward": 80857.47976800412,
+        "deribit_underlying": 80858,
+        "diff_bps": -0.06433896409419049,
+        "parity_strikes": 5
+      },
+      {
+        "expiry": "24SEP27",
+        "t_years": 0.8931203948503298,
+        "parity_forward": 81963.06989959534,
+        "deribit_underlying": 81964.19,
+        "diff_bps": -0.13665728956224754,
+        "parity_strikes": 5
+      }
+    ]
+  }
+}

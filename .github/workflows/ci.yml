@@ -1,0 +1,53 @@
+name: CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Build (pure Go and volsurf cgo pricer)
+        run: |
+          CGO_ENABLED=0 go build ./...
+          go build -tags volsurf ./...
+      - run: go vet ./... && go vet -tags volsurf ./...
+      - name: Test (race detector, both pricers)
+        run: |
+          go test -race -count=1 ./...
+          go test -race -count=1 -tags volsurf ./...
+      - name: Replay determinism on the committed Deribit sample
+        run: |
+          go build -tags volsurf -o bin/riskd ./cmd/riskd
+          a=$(bin/riskd replay testdata/deribit-btc-sample.jsonl.gz | jq -r .state_hash)
+          b=$(bin/riskd replay -scenario-workers 1 testdata/deribit-btc-sample.jsonl.gz | jq -r .state_hash)
+          echo "$a $b"; test "$a" = "$b"
+      - name: Benchmarks (smoke, shared runner; informational)
+        run: bin/riskd bench -sizes 1000 > /dev/null
+
+  fuzz:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go test -run '^$' -fuzz FuzzDecodeWS -fuzztime 45s ./internal/deribit/
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: test -z "$(gofmt -l .)"
+      - run: go vet ./... && go vet -tags volsurf ./...

@@ -1,0 +1,354 @@
+{
+  "mode": "replay",
+  "pricer": "volsurf",
+  "source": "testdata/deribit-btc-sample.jsonl.gz",
+  "events": 1128,
+  "mark_rows": 27820,
+  "wall_seconds": 0.206182916,
+  "events_per_sec": 5470.870341168325,
+  "mark_rows_per_sec": 134928.73483271524,
+  "processing_latency": {
+    "count": 1128,
+    "p50_us": 139.135,
+    "p99_us": 329.983,
+    "p999_us": 415.999,
+    "max_us": 422.911
+  },
+  "state_hash": "2a721ad4c902acf3",
+  "final": {
+    "seq": 1129,
+    "ts": 1793610732847,
+    "index": 78196.93,
+    "pricer": "volsurf",
+    "totals": {
+      "value_usd": -323873.5922023473,
+      "delta_btc": -2.881242733073631,
+      "gamma_1pct_btc": 1.1342054364278522,
+      "vega_usd_per_volpt": -92.51322545364671,
+      "theta_usd_per_day": -2101.5684702963545,
+      "vanna_per_volpt": 0.2503011237740492,
+      "volga_usd_per_volpt2": 78.77901611210916
+    },
+    "pnl": {
+      "total_usd": -39557.41371029499,
+      "realised_usd": -1426.8231436523802,
+      "unrealised_usd": -38130.59056664261,
+      "explain": {
+        "Delta": -120.22833133996838,
+        "Gamma": 3.493958930088676,
+        "Vega": 91.74858432652873,
+        "Theta": -14.146543342622348,
+        "Vanna": -0.14523645585954567,
+        "Volga": 0.5482598790584154,
+        "Unexplained": 0.006757405437875647,
+        "NewTrade": -39518.69115969768
+      }
+    },
+    "spot_hedge_btc": -5.114492270879835,
+    "positions": 173,
+    "expiries": [
+      {
+        "expiry": "13NOV26",
+        "t_years": 0.029999592624302386,
+        "parity_forward": 78321.11657796967,
+        "deribit_forward_at_start": 78301.97,
+        "parity_strikes": 5,
+        "positions": 6,
+        "delta_fwd": -1.2293719143103117,
+        "vega_usd_per_volpt": -546.1179308238483,
+        "theta_usd_per_day": 951.3724987291442
+      },
+      {
+        "expiry": "26MAR27",
+        "t_years": 0.394383154268138,
+        "parity_forward": 79906.4509842136,
+        "deribit_forward_at_start": 79886.2,
+        "parity_strikes": 5,
+        "positions": 15,
+        "delta_fwd": -6.832436113188419,
+        "vega_usd_per_volpt": -891.6142985453885,
+        "theta_usd_per_day": 143.01815055086664
+      },
+      {
+        "expiry": "25DEC26",
+        "t_years": 0.1450680857749873,
+        "parity_forward": 78843.62680683311,
+        "deribit_forward_at_start": 78828.97,
+        "parity_strikes": 5,
+        "positions": 19,
+        "delta_fwd": -2.177485870987925,
+        "vega_usd_per_volpt": 179.90823803058873,
+        "theta_usd_per_day": -59.75774323223011
+      },
+      {
+        "expiry": "27NOV26",
+        "t_years": 0.06835575700786403,
+        "parity_forward": 78486.61702555846,
+        "deribit_forward_at_start": 78470.61,
+        "parity_strikes": 5,
+        "positions": 21,
+        "delta_fwd": 1.3013426928050553,
+        "vega_usd_per_volpt": 420.558609410473,
+        "theta_usd_per_day": -294.54965676839106
+      },
+      {
+        "expiry": "24SEP27",
+        "t_years": 0.8930132912544394,
+        "parity_forward": 82093.38122113905,
+        "deribit_forward_at_start": 82087.04,
+        "parity_strikes": 5,
+        "positions": 20,
+        "delta_fwd": -7.835032783392283,
+        "vega_usd_per_volpt": -954.1253540999518,
+        "theta_usd_per_day": 53.1780549822231
+      },
+      {
+        "expiry": "25JUN27",
+        "t_years": 0.6436982227612887,
+        "parity_forward": 80987.65432098765,
+        "deribit_forward_at_start": 80976.31,
+        "parity_strikes": 5,
+        "positions": 25,
+        "delta_fwd": 7.329544319549986,
+        "vega_usd_per_volpt": -1767.1427108088717,
+        "theta_usd_per_day": 163.16035854852728
+      },
+      {
+        "expiry": "29JAN27",
+        "t_years": 0.24095849673389141,
+        "parity_forward": 79237.71313941825,
+        "deribit_forward_at_start": 79220.29,
+        "parity_strikes": 5,
+        "positions": 18,
+        "delta_fwd": -1.8677071820962312,
+        "vega_usd_per_volpt": 3129.587185225604,
+        "theta_usd_per_day": -679.6980878766757
+      },
+      {
+        "expiry": "6NOV26",
+        "t_years": 0.010821510432521563,
+        "parity_forward": 78233.31352743118,
+        "deribit_forward_at_start": 78219.98,
+        "parity_strikes": 5,
+        "positions": 15,
+        "delta_fwd": -7.269925869204414,
+        "vega_usd_per_volpt": 506.5112436840856,
+        "theta_usd_per_day": -2498.2796809125143
+      },
+      {
+        "expiry": "20NOV26",
+        "t_years": 0.049177674816083206,
+        "parity_forward": 78403.42124019958,
+        "deribit_forward_at_start": 78385.72,
+        "parity_strikes": 5,
+        "positions": 9,
+        "delta_fwd": 10.210264508757415,
+        "vega_usd_per_volpt": -78.83178688277222,
+        "theta_usd_per_day": 67.94227260103709
+      },
+      {
+        "expiry": "5NOV26",
+        "t_years": 0.008081784405124302,
+        "parity_forward": 78226.20827105132,
+        "deribit_forward_at_start": 78206.75,
+        "parity_strikes": 5,
+        "positions": 16,
+        "delta_fwd": 6.7711318521428705,
+        "vega_usd_per_volpt": -194.71989996721592,
+        "theta_usd_per_day": 1282.898093803148
+      },
+      {
+        "expiry": "4NOV26",
+        "t_years": 0.005342058377727042,
+        "parity_forward": 78203.3286545017,
+        "deribit_forward_at_start": 78193.83,
+        "parity_strikes": 5,
+        "positions": 9,
+        "delta_fwd": 4.124670791825849,
+        "vega_usd_per_volpt": 103.47347932365001,
+        "theta_usd_per_day": -1230.8527307214897
+      },
+      {
+        "expiry": "3NOV26",
+        "t_years": 0.002602332350329782,
+        "parity_forward": 78195.94390071637,
+        "deribit_forward_at_start": 78182.04,
+        "parity_strikes": 5,
+        "positions": 0,
+        "delta_fwd": 0,
+        "vega_usd_per_volpt": 0,
+        "theta_usd_per_day": 0
+      }
+    ],
+    "scenarios": {
+      "ts": 1793610732847,
+      "spot_shocks": [
+        -0.2,
+        -0.1,
+        -0.05,
+        -0.02,
+        0,
+        0.02,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "vol_shocks": [
+        -0.1,
+        -0.05,
+        0,
+        0.05,
+        0.1
+      ],
+      "pnl_usd": [
+        [
+          213733.64679988477,
+          195729.5935581954,
+          178762.07473031644,
+          163359.29917049027,
+          149816.62370191506
+        ],
+        [
+          105976.3225321138,
+          89852.55754685077,
+          76359.15306742303,
+          65610.00182136307,
+          57469.37798997438
+        ],
+        [
+          44298.8834918091,
+          33379.02712275549,
+          25552.21223060332,
+          20500.065031652437,
+          17836.731518817705
+        ],
+        [
+          17058.747749315906,
+          10424.096583285871,
+          6558.376851146602,
+          5043.710079852131,
+          5494.325313789471
+        ],
+        [
+          5309.396420779181,
+          1503.2188629440852,
+          0,
+          468.68355356997836,
+          2600.362078687107
+        ],
+        [
+          -2307.3408509404558,
+          -3651.721643418307,
+          -3064.456308368876,
+          -827.8327869451539,
+          2803.6224507619568
+        ],
+        [
+          -11733.256142262122,
+          -9101.562367968694,
+          -5099.695591845935,
+          24.36672105064679,
+          6087.191793847087
+        ],
+        [
+          -25999.04364564459,
+          -16442.19375898864,
+          -6282.917136680268,
+          4184.494625523993,
+          14831.197621053507
+        ],
+        [
+          -16799.855670707155,
+          1124.7884013074377,
+          18718.077437936838,
+          35933.76403255499,
+          52742.3487648959
+        ]
+      ],
+      "worst_usd": -25999.04364564459,
+      "worst_spot_shock": 0.1,
+      "worst_vol_shock": -0.1,
+      "options_revalued": 7785
+    },
+    "limits": [
+      {
+        "name": "delta_btc",
+        "value": 2.881242733073631,
+        "limit": 4,
+        "utilisation": 0.7203106832684077,
+        "breached": false
+      },
+      {
+        "name": "gamma_1pct_btc",
+        "value": 1.1342054364278522,
+        "limit": 15,
+        "utilisation": 0.07561369576185681,
+        "breached": false
+      },
+      {
+        "name": "vega_bucket_usd",
+        "value": 3129.587185225604,
+        "limit": 20000,
+        "utilisation": 0.1564793592612802,
+        "breached": false
+      },
+      {
+        "name": "scenario_loss_usd",
+        "value": 25999.04364564459,
+        "limit": 2500000,
+        "utilisation": 0.010399617458257836,
+        "breached": false
+      }
+    ],
+    "alerts": [
+      {
+        "ts": 1793610401605,
+        "name": "delta_btc",
+        "kind": "breach",
+        "value": 4.003119662738959,
+        "limit": 4
+      },
+      {
+        "ts": 1793610453888,
+        "name": "delta_btc",
+        "kind": "clear",
+        "value": 0,
+        "limit": 4
+      },
+      {
+        "ts": 1793610493644,
+        "name": "delta_btc",
+        "kind": "breach",
+        "value": 4.350101350580666,
+        "limit": 4
+      },
+      {
+        "ts": 1793610514311,
+        "name": "delta_btc",
+        "kind": "clear",
+        "value": 0.3144711073518973,
+        "limit": 4
+      }
+    ],
+    "stats": {
+      "Events": 1128,
+      "MarkRows": 27820,
+      "IndexTicks": 553,
+      "Revalued": 22624,
+      "IVFallback": 0,
+      "IVFail": 0,
+      "Unknown": 0,
+      "Trades": 179,
+      "SpotTrades": 1,
+      "Scenarios": 564
+    },
+    "state_hash": "2a721ad4c902acf3",
+    "latency": {
+      "count": 1128,
+      "p50_us": 139.135,
+      "p99_us": 329.983,
+      "p999_us": 415.999,
+      "max_us": 422.911
+    }
+  }
+}

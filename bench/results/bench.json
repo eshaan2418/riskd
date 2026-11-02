@@ -1,0 +1,102 @@
+{
+  "engine": [
+    {
+      "pricer": "go",
+      "positions": 900,
+      "full_revaluation_ms": 0.858,
+      "full_revaluation_ns_per_position": 953.3333333333334,
+      "scenario_cells": 45,
+      "scenario_grid_ms_by_workers": {
+        "1": 2.099,
+        "18": 0.755,
+        "4": 0.91
+      }
+    },
+    {
+      "pricer": "volsurf",
+      "positions": 900,
+      "full_revaluation_ms": 0.486,
+      "full_revaluation_ns_per_position": 540,
+      "scenario_cells": 45,
+      "scenario_grid_ms_by_workers": {
+        "1": 2.159,
+        "18": 0.753,
+        "4": 0.727
+      }
+    },
+    {
+      "pricer": "go",
+      "positions": 9000,
+      "full_revaluation_ms": 8.533,
+      "full_revaluation_ns_per_position": 948.1111111111111,
+      "scenario_cells": 45,
+      "scenario_grid_ms_by_workers": {
+        "1": 19.431,
+        "18": 3.608,
+        "4": 6.404
+      }
+    },
+    {
+      "pricer": "volsurf",
+      "positions": 9000,
+      "full_revaluation_ms": 5.025,
+      "full_revaluation_ns_per_position": 558.3333333333334,
+      "scenario_cells": 45,
+      "scenario_grid_ms_by_workers": {
+        "1": 21.258,
+        "18": 3.725,
+        "4": 6.645
+      }
+    },
+    {
+      "pricer": "go",
+      "positions": 29304,
+      "full_revaluation_ms": 29.033,
+      "full_revaluation_ns_per_position": 990.7521157521157,
+      "scenario_cells": 45,
+      "scenario_grid_ms_by_workers": {
+        "1": 61.216,
+        "18": 11.292,
+        "4": 18.534
+      }
+    },
+    {
+      "pricer": "volsurf",
+      "positions": 29304,
+      "full_revaluation_ms": 17.405,
+      "full_revaluation_ns_per_position": 593.9462189462189,
+      "scenario_cells": 45,
+      "scenario_grid_ms_by_workers": {
+        "1": 69.96,
+        "18": 10.067,
+        "4": 21.207
+      }
+    }
+  ],
+  "gomaxprocs": 18,
+  "note": "synthetic chain (internal/sim); every position is a distinct instrument; full revaluation = one marks event touching every instrument (forward moves, so every position reprices)",
+  "pricers": [
+    {
+      "pricer": "go",
+      "greeks_ns_per_option_by_batch": {
+        "1": 34.820556640625,
+        "4096": 30.303955078125,
+        "512": 30.364990234375,
+        "64": 31.982421875,
+        "8": 33.3251953125
+      },
+      "iv_ns_per_solve_batch_4096": 555.419921875
+    },
+    {
+      "pricer": "volsurf",
+      "greeks_ns_per_option_by_batch": {
+        "1": 56.0302734375,
+        "4096": 48.33984375,
+        "512": 46.7529296875,
+        "64": 45.135498046875,
+        "8": 45.745849609375
+      },
+      "iv_ns_per_solve_batch_4096": 355.46875
+    }
+  ]
+}
